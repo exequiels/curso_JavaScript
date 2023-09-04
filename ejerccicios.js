@@ -33,3 +33,30 @@ var contacto_3 = {
 
 contactos.contacto_3 = contacto_3;
 console.log(Object.keys(contactos).length);
+
+/* Productos online */
+var productos = [
+    {
+        nombre: "azucar",
+        precio: 10,
+        disponibilidad: true
+    },
+    {
+        nombre: "sal",
+        precio: 5,
+        disponibilidad: true
+    },
+    {
+        nombre: "pimienta",
+        precio: 3,
+        disponibilidad: false
+    }
+]
+
+function mostrarProducto (productos) {
+    console.log("Producto " + productos.nombre);
+    console.log("precio " + productos.precio);
+    console.log("disponibilidad" + productos.disponibilidad);
+}
+
+mostrarProducto(productos[0]);
