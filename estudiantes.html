@@ -1,0 +1,64 @@
+<form id="promedios">
+    <table border="1">
+      <tr>
+        <td>
+          <p>Estudiante 1 :</p>
+          <p><input type="text" placeholder="Nombre" id="estudiante1" required><input type="number" placeholder="Nota 1" id="nota1" required min="0" max="10"><input type="number" placeholder="Nota 2" id="nota2" required min="0" max="10"><input type="number" placeholder="Nota 3" id="nota3" required min="0" max="10"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Estudiante 2 :</p>
+          <p><input type="text" placeholder="Nombre" id="estudiante2" required><input type="number" placeholder="Nota 1" id="nota4" required min="0" max="10"><input type="number" placeholder="Nota 2" id="nota5" required min="0" max="10"><input type="number" placeholder="Nota 3" id="nota6" required min="0" max="10"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Estudiante 3 :</p>
+          <p><input type="text" placeholder="Nombre" id="estudiante3" required><input type="number" placeholder="Nota 1" id="nota7" required min="0" max="10"><input type="number" placeholder="Nota 2" id="nota8" required min="0" max="10"><input type="number" placeholder="Nota 3" id="nota9" required min="0" max="10"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" id="resetear" value="Resetear">
+          <input type="submit" id="calcular" value="Calcular" onclick="obtenerDatos()">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+<script>
+    // Referencia para resolver el ejercicio: https://www.youtube.com/watch?v=wZtEwIr7_gg
+      function obtenerDatos() {
+        document.getElementById("calcular").disabled = true;
+
+        var estudiante1 = document.getElementById("estudiante1").value;
+        var nota1 = parseFloat(document.getElementById("nota1").value);
+        var nota2 = parseFloat(document.getElementById("nota2").value);
+        var nota3 = parseFloat(document.getElementById("nota3").value);
+
+        var estudiante2 = document.getElementById("estudiante2").value;
+        var nota4 = parseFloat(document.getElementById("nota4").value);
+        var nota5 = parseFloat(document.getElementById("nota5").value);
+        var nota6 = parseFloat(document.getElementById("nota6").value);
+
+        var estudiante3 = document.getElementById("estudiante3").value;
+        var nota7 = parseFloat(document.getElementById("nota7").value);
+        var nota8 = parseFloat(document.getElementById("nota8").value);
+        var nota9 = parseFloat(document.getElementById("nota9").value);
+
+        var promedio1 = (nota1 + nota2 + nota3) / 3;
+        var promedio2 = (nota4 + nota5 + nota6) / 3;
+        var promedio3 = (nota7 + nota8 + nota9) / 3;
+
+        console.log("Promedio de " + estudiante1 + ": " + promedio1.toFixed(2));
+        console.log("Promedio de " + estudiante2 + ": " + promedio2.toFixed(2));
+        console.log("Promedio de " + estudiante3 + ": " + promedio3.toFixed(2));
+
+        document.getElementById("resetear").addEventListener("click", function () 
+            {
+                document.getElementById("promedios").reset();
+                document.getElementById("calcular").disabled = false;
+            });
+    };
+  </script>
