@@ -21,7 +21,8 @@
       <tr>
         <td>
           <input type="button" id="resetear" value="Resetear">
-          <input type="submit" id="calcular" value="Calcular" onclick="obtenerDatos()">
+          <input type="submit" id="calcular" value="Calcular">
+          <!-- <input type="submit" id="calcular" value="Calcular" onclick="obtenerDatos()"> -->
         </td>
       </tr>
     </table>
@@ -29,8 +30,10 @@
 
 <script>
     // Referencia para resolver el ejercicio: https://www.youtube.com/watch?v=wZtEwIr7_gg
-      function obtenerDatos() {
-        document.getElementById("calcular").disabled = true;
+      //function obtenerDatos() {
+        //document.getElementById("calcular").disabled = true;
+        document.getElementById("promedios").addEventListener("submit", function (event) {
+        event.preventDefault();
 
         var estudiante1 = document.getElementById("estudiante1").value;
         var nota1 = parseFloat(document.getElementById("nota1").value);
@@ -60,5 +63,5 @@
                 document.getElementById("promedios").reset();
                 document.getElementById("calcular").disabled = false;
             });
-    };
+    });
   </script>
