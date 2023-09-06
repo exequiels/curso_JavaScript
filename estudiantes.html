@@ -36,6 +36,17 @@
     this.nota3 = nota3;
   }
 
+  this.promedio = function() {
+    return (this.nota1 + this.nota2 + this.nota3) / 3;
+  };
+
+  var estudiante1 = new estudiantes('Juan', 5, 7, 9);
+  var estudiante2 = new estudiantes('Pepe', 6, 8, 7);
+  var estudiante3 = new estudiantes('Maria', 7, 6, 8);
+
+  console.log(estudiante1.promedio());
+  console.log(estudiante2.promedio());
+  console.log(estudiante3.promedio());
 </script>
 
 <script>
