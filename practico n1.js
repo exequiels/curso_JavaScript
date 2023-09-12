@@ -48,3 +48,15 @@ function promediarNotas (promediar) {
 
 const resultadoPromedios = promediarNotas(notasAlumnoPromediar);
 console.log(resultadoPromedios);
+
+// 5 - Valor máximo
+const notasAlumnoMaximo = [4,7,8,10,7,9];
+
+function valorMaximo (maximo) {
+    return maximo.reduce((a, b) => {
+        return Math.max(a, b);
+    });
+};
+
+const vMaximo = valorMaximo(notasAlumnoMaximo);
+console.log(vMaximo);
