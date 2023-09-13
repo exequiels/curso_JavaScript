@@ -104,4 +104,25 @@ const busqueda = buscarCosas(notasAlumnoBuscar, valorDeBusqueda);
 console.log(busqueda);
 
 // 9 - Búsqueda de la primera coincidencia
+const numeros = [4,7,8,10,7,9];
+const buscar = 10;
+
+function buscarIndice (arr, elemento) {
+    let indice = arr.indexOf(elemento);
+    return (indice !== -1) ? indice : -1;         
+};
+
+const buscadorIndice = buscarIndice(numeros, buscar);
+console.log(buscadorIndice);
+
 // 10 - Búsqueda de la última coincidencia
+const numeros_2 = [4,7,8,10,7,9];
+const buscar_2 = 7;
+
+function buscarUltimaInstancia (arr, elemento) {
+    let ultimo = arr.lastIndexOf(elemento);
+    return (ultimo !== -1) ? ultimo : -1;         
+};
+
+const buscadorUltimo = buscarUltimaInstancia(numeros_2, buscar_2);
+console.log(buscadorUltimo);
