@@ -21,7 +21,7 @@ function multiplicarNotas (alumno) {
     return total;
 }
 
-const resultadoMultiplicacion = multiplicarNotas(notasAlumno);
+const resultadoMultiplicacion = multiplicarNotas(notasAlumnoMultiplicar);
 console.log(resultadoMultiplicacion);
 
 // 3 - Concatenar
@@ -60,3 +60,48 @@ function valorMaximo (maximo) {
 
 const vMaximo = valorMaximo(notasAlumnoMaximo);
 console.log(vMaximo);
+
+// 6 - Contar ocurrencias
+const notasAlumnoContar = [4, 7, 8, 10, 7, 9, 5, 7, 8];
+const notaBuscar = 7;
+
+function buscarNumero(notas, nota) {
+    return notas.reduce((a, b) => {
+        return b === nota ? a + 1 : a;
+    }, 0);
+}
+
+const resultadoBusqueda = buscarNumero(notasAlumnoContar, notaBuscar);
+console.log(`El número ${notaBuscar} aparece ${resultadoBusqueda} veces.`);
+
+// 7 - Ordenar palabras por longitud
+const palabrasParaOrdenar = ["palabras", "para", "ordernar", "con", "una", "funcion"];
+
+function ordernar (palabras) {
+    let palabrasOrdenadas = palabras.sort((a, b) => {
+        if (a.length > b.length) {
+            return 1;
+        } else if (a.length < b.length) {
+            return -1;
+        }
+        return 0;
+   });
+    return palabrasOrdenadas;
+}
+
+const ordenarPalabras = ordernar(palabrasParaOrdenar);
+console.log(ordenarPalabras);
+
+// 8 - Búsqueda de un elemento en un arreglo
+const notasAlumnoBuscar = [4, 7, 8, 10, 7, 9, 5, 7, 8];
+const valorDeBusqueda = 8;
+
+function buscarCosas(arr, valor) {
+    return arr.includes(valor)
+}
+
+const busqueda = buscarCosas(notasAlumnoBuscar, valorDeBusqueda);
+console.log(busqueda);
+
+// 9 - Búsqueda de la primera coincidencia
+// 10 - Búsqueda de la última coincidencia
