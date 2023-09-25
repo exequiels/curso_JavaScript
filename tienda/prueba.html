@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Tienda de Productos</title>
+</head>
+<body>
+    <h1>Tienda de Productos</h1>
+    <div id="productos">
+        <!-- Aquí se mostrarán los productos en imágenes -->
+        <div class="producto electronico" id="producto_0">
+            <img src="laptop.jpg" alt="Laptop">
+            <p class="nombre">Laptop</p>
+            <p class="precio">$1000</p>
+            <p class="potencia">Potencia: 500W</p>
+            <button onclick="agregarAlCarrito(0)">Agregar al carrito</button>
+        </div>
+        <div class="producto alimenticio" id="producto_1">
+            <img src="manzanas.jpeg" alt="Manzanas">
+            <p class="nombre">Manzanas</p>
+            <p class="precio">$2</p>
+            <p class="caducidad">Fecha de Caducidad: 01/10/2023</p>
+            <button onclick="agregarAlCarrito(1)">Agregar al carrito</button>
+        </div>
+        <!-- Agregar más productos aquí -->
+    </div>
+    <div id="carrito">
+        <span id="cantidad"></span>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito">
+            <!-- Aquí se mostrarán los productos en el carrito -->
+        </ul>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
