@@ -1,0 +1,189 @@
+<!-- Practico 2 -->
+<!-- JQuery -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Ejercicios</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+    </head>
+    <body>
+        
+        <!-- Ejercicio 1 -->
+        <label><u>Ejercicio #1</u></label>
+        <div class="container">
+            <p>Este es un párrafo.</p>
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+            </ul>
+            <p>Otro párrafo.</p>
+        </div>
+        <hr />
+        <!-- // Ejercicio 1 -->
+
+
+        <!-- Ejercicio 2 -->
+        <label><u>Ejercicio #2</u></label>
+        <div class="parent">
+            <p>Párrafo 1</p>
+            <div>
+                <span>Texto 1</span>
+                <span>Texto 2</span>
+            </div>
+            <p>Párrafo 2</p>
+            <div>
+                <span>Texto 3</span>
+                <span>Texto 4</span>
+            </div>
+        </div>
+        <hr />
+        <!-- // Ejercicio 2 -->
+
+        <!-- Ejercicio 3 -->
+        <label><u>Ejercicio #3</u></label>
+        <ul class="ul-tres">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>Elemento 5</li>
+        </ul>
+        <hr />
+        <!-- // Ejercicio 3 -->
+
+        <!-- Ejercicio 4 -->
+        <label><u>Ejercicio #4</u></label>
+        <div class="container-cuatro">
+            <div class="box">
+                <p>Elemento 1</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                </ul>
+            </div>
+            <div class="box">
+                <p>Elemento 2</p>
+                <ul>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <!-- // Ejercicio 4 -->
+
+        <!-- Ejercicio 5 -->
+        <label><u>Ejercicio #5</u></label>
+        <div id="container">
+                <div class="box-cinco">
+                    <p>Elemento 1</p>
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                    </ul>
+                </div>
+                <div class="box-cinco">
+                    <p>Elemento 2</p>
+                    <ul>
+                        <li>Item 3</li>
+                        <li>Item 4</li>
+                    </ul>
+                </div>
+            </div>
+        <hr />
+        <!-- // Ejercicio 5 -->
+
+        <!-- Ejercicio 6 -->
+        <label><u>Ejercicio #6</u></label>
+        <p>
+            <button id="btn1" class="boton">Botón 1</button>
+            <button id="btn2" class="boton">Botón 2</button>
+            <button id="btn3" class="boton">Botón 3</button>
+        </p>
+        <hr />
+        <!-- // Ejercicio 6 -->
+
+        <!-- Ejercicio 7 -->
+        <label><u>Ejercicio #7</u></label>
+        <form id="formulario" action=""> 
+                <p>
+                    <input type="text" id="nombre" placeholder="Nombre">
+                    <span class="validacion" style="display: none; color: red;">Complete el nombre</span>
+                </p>
+                <p>
+                    <input type="email" id="email" placeholder="Email">
+                    <span class="validacion" style="display: none; color: red;">Complete el email
+                </p>
+                <p>
+                    <input type="password" id="password" placeholder="Password">
+                    <span class="validacion" style="display: none; color: red;">Complete la contraseña</span>
+                    <input type="submit" value="Validar">
+                </p>
+        </form>
+        <hr />
+        <!-- // Ejercicio 7 -->
+
+    </body>
+</html>
+
+<!-- Ejercicio 1 -->
+<script>
+    $('.container p').css('color', 'red');
+</script>
+
+<!-- Ejercicio 2 -->
+<script>
+    $('.parent span').css('background-color', 'yellow');
+</script> 
+
+<!-- Ejercicio 3 -->
+<script>
+    $('.ul-tres li:eq(2)').text('Nuevo');
+</script>
+
+<!-- Ejercicio 4 -->
+<script>
+    $('.box').addClass('has-list');
+</script>
+
+<!-- Ejercicio 5 -->
+<script>
+    $('.box-cinco ul').addClass('highlight');
+</script>
+
+<!-- Ejercicio 6 -->
+<script>
+    $('.boton').click(function() {
+        let textoBoton = $(this).text();
+        alert("¡Hiciste clic en el " + textoBoton );
+    });
+</script>
+
+<!-- Ejercicio 7 -->
+<script>
+    $(document).ready(function () {
+        $('#formulario').submit(function(event) {
+            event.preventDefault();
+            
+            let nombre = $('#nombre').val();
+            let email = $('#email').val();
+            let password = $('#password').val();
+
+            $('.validacion').hide();
+
+            if (nombre === "") {
+                $('#nombre').siblings('.validacion').show();
+            }
+
+            if (email === "") {
+                $('#email').siblings('.validacion').show();
+            }
+
+            if (password === "") {
+                $('#password').siblings('.validacion').show();
+            }
+        });
+    });
+</script>
