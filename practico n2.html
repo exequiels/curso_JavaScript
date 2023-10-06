@@ -127,15 +127,32 @@
 
         <!-- Ejercicio  8 -->
         <label><u>Ejercicio #8</u></label>
-        <p><select id="select-div">
-            <option>Elige un div con un texto</option>
-            <option value="1">Div con texto 1</option>
-            <option value="2">Div con texto 2</option>
-            <option value="3">Div con texto 3</option>
-        </select></p>
+        <p>
+            <select id="select-div">
+                <option>Elige un div con un texto</option>
+                <option value="1">Div con texto 1</option>
+                <option value="2">Div con texto 2</option>
+                <option value="3">Div con texto 3</option>
+            </select>
+        </p>
         <div id="div-select"></div>
         <hr />
         <!-- // Ejercicio 8 -->
+
+        <!-- Ejercicio  9 -->
+        <label><u>Ejercicio #9</u></label>
+        <p>
+            <select id="select-pais">
+                <option>Elige un Pais</option>
+                <option value="arg">Argentina</option>
+                <option value="cl">Chile</option>
+                <option value="uy">Uruguay</option>
+            </select>
+            <select id="select-opciones"></select>
+            </select>
+        </p>
+        <hr />
+        <!-- // Ejercicio 9 -->
 
     </body>
 </html>
@@ -217,6 +234,29 @@
                 break;
             default:
                 $('#div-select').text('');
+        }
+    });
+</script>
+
+<!-- Ejercicio 9 -->
+<script>
+    const opcionesPorPais = {
+        arg: ['Mendoza', 'San Juan', 'La Pampa'],
+        cl: ['Santiago', 'Santiago 2', 'Santiago 3'],
+        uy: ['Montevideo', 'Montevideo 2', 'Montevideo 3'],
+    };
+
+    $('#select-pais').change(function () {
+        let selectPais = $(this).val();
+        let selectOpciones = $('#select-opciones');
+
+        selectOpciones.empty();
+
+        if (opcionesPorPais[selectPais]) {
+            opcionesPorPais[selectPais].forEach(function(opcion) {
+                let nuevaOpcion = $('<option></option>').attr('value', opcion).text(opcion);
+                selectOpciones.append(nuevaOpcion);
+            });
         }
     });
 </script>
