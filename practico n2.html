@@ -125,6 +125,18 @@
         <hr />
         <!-- // Ejercicio 7 -->
 
+        <!-- Ejercicio  8 -->
+        <label><u>Ejercicio #8</u></label>
+        <p><select id="select-div">
+            <option>Elige un div con un texto</option>
+            <option value="1">Div con texto 1</option>
+            <option value="2">Div con texto 2</option>
+            <option value="3">Div con texto 3</option>
+        </select></p>
+        <div id="div-select"></div>
+        <hr />
+        <!-- // Ejercicio 8 -->
+
     </body>
 </html>
 
@@ -185,5 +197,26 @@
                 $('#password').siblings('.validacion').show();
             }
         });
+    });
+</script>
+
+<!-- Ejercicio 8 -->
+<script>
+    $('#select-div').change(function () {
+        let divElegido = $(this).val();
+
+        switch (divElegido) {
+            case "1":
+                $('#div-select').text('Texto 1');
+                break;
+            case "2":
+                $('#div-select').text('Texto 2');
+                break;
+            case "3":
+                $('#div-select').text('Texto 3');
+                break;
+            default:
+                $('#div-select').text('');
+        }
     });
 </script>
