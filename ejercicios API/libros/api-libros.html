@@ -15,15 +15,18 @@ fetch('http://localhost:3001/libros')
   .then(data => {
     libros = data;
     const librosDiv = document.getElementById('librosDiv');
+    const ul = document.createElement('ul');
     libros.forEach((libro, index) => {
+      const li = document.createElement('li');
       const a = document.createElement('a');
       a.textContent = libro.título;
       a.href = "#";
       a.id = index;
       a.onclick = mostrarInfo;
-      librosDiv.appendChild(a);
-      librosDiv.appendChild(document.createElement('br'));
+      li.appendChild(a);
+      ul.appendChild(li);
     });
+    librosDiv.appendChild(ul);
   })
   .catch(error => console.error('Error:', error));
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+<body>
+
+<h1>Select de personas</h1>
+
+<p id="selectDiv"></p>
+<label id="labelPer"></label>
+
+<script>
+let personas = [];
+
+fetch('http://localhost:3000/personas')
+  .then(response => response.json())
+  .then(data => {
+    personas = data;
+    const selectPersonas = $("<select></select>");
+
+    personas.forEach((persona, index) => {
+      const option = $("<option></option>");
+      option.attr('value', persona.código);
+      option.text(persona.nombre);
+      selectPersonas.append(option);
+    });
+
+    selectPersonas.change(function() {
+      let selectedOption = $(this).find('option:selected');
+      $('#labelPer').text("Código: " + selectedOption.val() + ", Nombre: " + selectedOption.text());
+    });
+
+    $('#selectDiv').append(selectPersonas);
+  })
+  .catch(error => console.error('Error:', error));
+</script>
+
+</body>
+</html>
