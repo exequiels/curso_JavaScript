@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Lista de libros</h1>
+
+<p id="librosDiv"></p>
+<p id="libroInfo"></p>
+
+<script>
+let libros = [];
+
+fetch('http://localhost:3001/libros')
+  .then(response => response.json())
+  .then(data => {
+    libros = data;
+    const librosDiv = document.getElementById('librosDiv');
+    libros.forEach((libro, index) => {
+      const a = document.createElement('a');
+      a.textContent = libro.título;
+      a.href = "#";
+      a.id = index;
+      a.onclick = mostrarInfo;
+      librosDiv.appendChild(a);
+      librosDiv.appendChild(document.createElement('br'));
+    });
+  })
+  .catch(error => console.error('Error:', error));
+
+function mostrarInfo(e) {
+  e.preventDefault();
+  const libro = libros[this.id];
+  const libroInfo = document.getElementById('libroInfo');
+  libroInfo.textContent = `${libro.título} de ${libro.autor}, publicado en ${libro.año}`;
+}
+</script>
+
+</body>
+</html>
