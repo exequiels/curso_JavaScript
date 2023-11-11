@@ -18,4 +18,4 @@ npm install ejs
 ```
 
 ## Uso
-Nos registramos luego nos logueamos, creaamos un post, contestamos un post..
+Nos registramos luego nos logueamos, creaamos un post, contestamos un post.
