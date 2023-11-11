@@ -1,11 +1,11 @@
 $(document).ready(function() {
-    const isAuthenticated = !!localStorage.getItem('userId');
+    const identificado = !!localStorage.getItem('userId');
     const tdRegistrarse = $('#btnRegistrarse td');
     const tdLoguearse = $('#btnLoguearse td');
     const tdSalir = $('#btnSalir td');
     let nuevoPost = '';
 
-    if (isAuthenticated) {
+    if (identificado) {
         tdRegistrarse.hide();
         tdLoguearse.hide();
         tdSalir.show();
